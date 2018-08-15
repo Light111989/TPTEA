@@ -10,11 +10,11 @@ const routes = [
       },
       {
         path: 'home',
-        component: () => import('pages/order.vue'),
+        component: () => import('pages/home.vue'),
       },
       {
         path: 'store',
-        component: () => import('pages/order.vue'),
+        component: () => import('pages/store.vue'),
       },
       {
         path: 'order',
@@ -33,7 +33,7 @@ const routes = [
 if (process.env.MODE !== 'ssr') {
   routes.push({
     path: '*',
-    component: () => import('pages/order.vue'),
+    component: () => import('pages/Error404.vue'),
   })
 }
 

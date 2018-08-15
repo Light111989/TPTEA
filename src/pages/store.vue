@@ -1,10 +1,12 @@
 <template>
-<q-btn label="New item" />
+<div>Store</div>
 </template>
+
+<style>
+</style>
+
 <script>
 export default {
-  name: 'PageStore',
-  
+  name: 'PageOrder',
 }
-
 </script>
