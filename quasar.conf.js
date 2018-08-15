@@ -83,6 +83,10 @@ module.exports = function(ctx) {
         'QCardSeparator',
         'QCardActions',
         'QItemSeparator',
+        'QTabs',
+        'QTab',
+        'QTabPane',
+        'QRouteTab',
       ],
       directives: ['Ripple', 'CloseOverlay'],
       // Quasar plugins
