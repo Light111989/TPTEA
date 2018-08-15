@@ -1,3 +1,4 @@
+import pgUsers from 'pages/user'
 const routes = [
   {
     path: '/',
@@ -21,7 +22,8 @@ const routes = [
       },
       {
         path: 'user',
-        component: () => import('pages/order.vue'),
+        component: pgUsers,
+        meta: {requiresAuth: true},
       },
     ],
   },
@@ -31,7 +33,7 @@ const routes = [
 if (process.env.MODE !== 'ssr') {
   routes.push({
     path: '*',
-    component: () => import('pages/Error404.vue'),
+    component: () => import('pages/order.vue'),
   })
 }
 

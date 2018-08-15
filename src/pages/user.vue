@@ -1,5 +1,7 @@
 <template>
-<div>User</div>
+  <div>
+   aaaaaaaaaaaaaa
+  </div>
 </template>
 
 <style>
@@ -7,6 +9,8 @@
 
 <script>
 export default {
-  name: 'PageUser',
+  data() {
+    return {}
+  },
 }
 </script>
