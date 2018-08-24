@@ -1,7 +1,7 @@
 import pgOrder from 'pages/order'
 import pgStore from 'pages/store'
 import pgMember from 'pages/member'
-import pgIndex from 'pages/Index'
+import pgHome from 'pages/home'
 const routes = [
   {
     path: '/',
@@ -9,7 +9,7 @@ const routes = [
     children: [
       {
         path: '',
-        component: pgIndex,
+        component: pgHome,
       },
       {
         path: 'orders',
