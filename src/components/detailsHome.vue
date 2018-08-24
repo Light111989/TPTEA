@@ -7,7 +7,7 @@
           </q-btn>
         </div>
          <img src="assets/header-pop.jpg" alt="ww" style="width: 683px; height:300px">
-        <q-btn flat icon="close" class="absolute-top-left" @click="hideDetail(false)" style="color: white;"/>
+        <q-btn flat icon="close" class="absolute-top-left" @click.native="hide()" style="color: white;"/>
         <div style="padding: 50px">
           <div class="q-display-1 q-mb-md">Basic Modal</div>
           <p v-for="n in 15" :key="`a-${n}`">Scroll down to close</p>
@@ -27,6 +27,9 @@ export default {
   },
   methods: {
     ...mapActions('detail', ['hideDetail']),
+    hide() {
+      this.hideDetail(false)
+    },
   },
 }
 </script>
