@@ -1,20 +1,36 @@
 <template >
   <div>
-    <cpn-home type="cpnHome"></cpn-home>
-    <ndcpn-home type="ndcpnHome"></ndcpn-home>
+    <div v-for="(data,home) in types" :key="home">
+      <new-home :label="data.label" :title="data.title" :img="data.img" :sub="data.sub"></new-home>
+    </div>
     <q-carousel style="max-width: 700px;margin:auto; height:300px" >
     <q-carousel-slide img-src='assets/panel.jpg'/>
 </q-carousel>
   </div>
 </template>
 <script>
-import cpnHome from '../components/cpnHome.vue'
-import ndcpnHome from '../components/ndcpnHome.vue'
+import newHome from '../components/newHome.vue'
 export default {
-  name: 'PageIndex',
+  name: 'PageHome',
   components: {
-    cpnHome,
-    ndcpnHome,
+    newHome,
+  },
+  data() {
+    return {
+      types: [
+        {
+          label: 'Learn More',
+          title: 'Bring on the fruit',
+          img: 'assets/component.jpg',
+        },
+        {
+          sub: 'aaaaa',
+          label: 'Discover Coffee',
+          title: 'Find a new favorite',
+          img: 'assets/component-mid.jpg',
+        },
+      ],
+    }
   },
 }
 </script>

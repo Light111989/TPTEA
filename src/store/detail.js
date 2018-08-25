@@ -14,7 +14,6 @@ const mutations = {
 const actions = {
   hideDetail({commit}, value) {
     commit('setIsHideHeader', value)
-    console.log(value)
   },
 }
 export default {
