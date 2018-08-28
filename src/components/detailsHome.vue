@@ -3,7 +3,7 @@
       <q-modal-layout>
         <div id="labels" class=" transbox">
           <q-btn @click="hide()" flat icon="close">
-            <div style="margin-left: 10px; text-transform: initial;">Bring on the fruit</div>
+            <div style="margin-left: 10px; text-transform: initial;">{{title}}</div>
           </q-btn>
         </div>
          <img src="assets/header-pop.jpg" alt="ww" style="width: 683px; height:300px">
@@ -21,6 +21,7 @@
 <script>
 import {mapGetters, mapActions} from 'vuex'
 export default {
+  props: ['title'],
   computed: {
     ...mapGetters('detail', ['getIsHideDetail']),
   },
@@ -44,7 +45,6 @@ export default {
   top: 0;
   border-left: 1px solid #d9d2d2;
   border-right: 1px solid #d9d2d2;
-  filter: alpha(opacity=60); /* For IE8 and earlier */
   margin-bottom: -38px;
 }
 </style>
