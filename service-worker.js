@@ -1,4 +1,4 @@
-importScripts("precache-manifest.eedff692a249d0e7f8928e5221b51f1e.js", "https://storage.googleapis.com/workbox-cdn/releases/3.6.1/workbox-sw.js");
+importScripts("precache-manifest.1ce767b920593f97c8330857146f615a.js", "https://storage.googleapis.com/workbox-cdn/releases/3.6.1/workbox-sw.js");
 
 /*
  * This file (which will be your service worker)
@@ -15,6 +15,8 @@ workbox.routing.registerRoute(({url}) => {
   return url.search.indexOf('getCustomer') > -1
 }, workbox.strategies.networkFirst())
 
+workbox.precaching.precache([{url: '/CHANGELOGS.md', revision: new Date().getTime().toString()}])
+
 self.addEventListener('fetch', event => {
   event.respondWith(
     caches.match(event.request).then(response => {
@@ -22,9 +24,7 @@ self.addEventListener('fetch', event => {
     })
   )
 })
-self.addEventListener('message', ({data}) => {
-  if (data === 'skipWaiting') {
-    self.skipWaiting()
-  }
-})
+
+workbox.skipWaiting()
+workbox.clientsClaim()
 
